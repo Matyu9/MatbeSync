@@ -9,7 +9,7 @@ cur = con.cursor()
 @app.route('/status/update', methods=["POST"])
 def add_status():
     if request.method == "POST":
-        if cur.execute("""SELECT * FROM server WHERE ip=?""", [request.remote_addr]).fetchone() != None:
+        if cur.execute("""SELECT * FROM server WHERE ip=?""", [request.remote_addr]).fetchone():
             return request.remote_addr
         else:
             return "302: Not Authorized"
