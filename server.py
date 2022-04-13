@@ -30,7 +30,7 @@ class ClientThread(threading.Thread):
                 break
 
             # We will use the MariaDB client to write the data to the database.
-            db = pymysql.connect(host="localhost", user="grafana", password="JeSuisPasGay999__", database="matbeSync")
+            db = pymysql.connect(host="localhost", user="grafana", password="password(not the real password)", database="matbeSync")
             cursor = db.cursor()
             # if messsage starts with '01:#01', we will insert the data into the mimas_ram table.
             if message.startswith('#01:01'.encode()):
