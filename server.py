@@ -1,4 +1,4 @@
-# Lets create a system receive message from an instance of my installation
+# Let's create a system receive message from an instance of my installation
 # of the client.py program.
 # We use the socket library to create a socket object. And use thread to thread the connection.
 # We use an MariaDB client to write the data to the database.
@@ -8,7 +8,9 @@ import socket
 import threading
 import pymysql
 
-webhook_url = "https://discord.com/api/webhooks/962749706243547136/lzWeN79baiNo6lMkiUMHjLwWuWyxfQT-leg9Y90W_7QEdw8XPmscCpUCsGUh-cO-w1TO"
+webhook_url = "https://discord.com/api/webhooks/962749706243547136/lzWeN79baiNo6lMkiUMHjLwWuWyxfQT" \
+              "-leg9Y90W_7QEdw8XPmscCpUCsGUh-cO-w1TO "
+
 
 # Make a threading class for the client.
 class ClientThread(threading.Thread):
@@ -38,9 +40,10 @@ class ClientThread(threading.Thread):
                 # We will split the message into the data.
                 data = message.split(','.encode())
                 if int(data[1].decode()) >= 85:
-                    if cpu_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
+                    if not cpu_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
                         embed = DiscordEmbed(title="RAM usage warning", color=0xFFA500,
                                              description="RAM usage is over 85%, exactly at " + data[1].decode() + "%")
                         # Send the embed message to the discord Webhook.
@@ -49,10 +52,15 @@ class ClientThread(threading.Thread):
                     else:
                         pass
                 elif int(data[1].decode()) >= 70:
-                    if cpu_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="RAM usage warning", color=0xFFA500, description="RAM usage is over 70%, exactly at " + data[1].decode() + "%")
+                    if not cpu_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="RAM usage warning", color=0xFFA500, description="RAM usage is "
+                                                                                                    "over 70%, "
+                                                                                                    "exactly at " +
+                                                                                                    data[1].decode()
+                                                                                                    + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -70,10 +78,15 @@ class ClientThread(threading.Thread):
                 # We will split the message into the data.
                 data = message.split(','.encode())
                 if int(data[1].decode()) >= 85:
-                    if ram_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500,description="CPU usage is over 85%, exactly at " + data[1].decode() + "%")
+                    if not ram_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500, description="CPU usage is "
+                                                                                                    "over 85%, "
+                                                                                                    "exactly at " +
+                                                                                                    data[1].decode()
+                                                                                                    + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -81,10 +94,15 @@ class ClientThread(threading.Thread):
                         pass
 
                 elif int(data[1].decode()) >= 70:
-                    if ram_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500,description="CPU usage is over 70%, exactly at " + data[1].decode() + "%")
+                    if not ram_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500, description="CPU usage is "
+                                                                                                    "over 70%, "
+                                                                                                    "exactly at " +
+                                                                                                    data[1].decode()
+                                                                                                    + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -106,9 +124,10 @@ class ClientThread(threading.Thread):
                 # We will split the message into the data.
                 data = message.split(','.encode())
                 if int(data[1].decode()) >= 85:
-                    if cpu_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
+                    if not cpu_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
                         embed = DiscordEmbed(title="Paaliaq RAM usage warning", color=0xFFA500,
                                              description="RAM usage is over 85%, exactly at " + data[1].decode() + "%")
                         # Send the embed message to the discord Webhook.
@@ -117,10 +136,17 @@ class ClientThread(threading.Thread):
                     else:
                         pass
                 elif int(data[1].decode()) >= 70:
-                    if cpu_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq RAM usage warning", color=0xFFA500, description="RAM usage is over 70%, exactly at " + data[1].decode() + "%")
+                    if not cpu_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="Paaliaq RAM usage warning", color=0xFFA500, description="RAM "
+                                                                                                            "usage is"
+                                                                                                            " over "
+                                                                                                            "70%, "
+                                                                                                            "exactly "
+                                                                                                            "at " +
+                                                                                                            data[1].decode() + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -138,10 +164,19 @@ class ClientThread(threading.Thread):
                 # We will split the message into the data.
                 data = message.split(','.encode())
                 if int(data[1].decode()) >= 85:
-                    if ram_over_use == False:
-                        # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500,description="CPU usage is over 85%, exactly at " + data[1].decode() + "%")
+                    if not ram_over_use:
+                        # We will send an embed message to the discord Webhook. Create an embed object with an orange
+                        # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
+                        # exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500, description="CPU "
+                                                                                                            "usage is"
+                                                                                                            " over "
+                                                                                                            "85%, "
+                                                                                                            "exactly "
+                                                                                                            "at " +
+                                                                                                            data[
+
+                                                                                                                1].decode() + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -149,10 +184,10 @@ class ClientThread(threading.Thread):
                         pass
 
                 elif int(data[1].decode()) >= 70:
-                    if ram_over_use == False:
+                    if not ram_over_use:
                         # We will send an embed message to the discord Webhook.
-                        # Create an embed object with a orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500,description="CPU usage is over 70%, exactly at " + data[1].decode() + "%")
+                        # Create an embed object with an orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500, description="CPU usage is over 70%, exactly at " + data[1].decode() + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -168,6 +203,7 @@ class ClientThread(threading.Thread):
                     db.commit()
                 except Exception as e:
                     print(e)
+
 
 # Create a socket object
 s = socket.socket()
