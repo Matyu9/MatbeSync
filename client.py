@@ -15,9 +15,10 @@ connect = client_socket.connect((host, port))
 print("Connected to the server")
 while True:
     # Send a message with #01:01 and the ram usage
-    cpu = f"#01:02,{int(psutil.cpu_percent(1))}".encode()
     ram = f"#01:01,{int(psutil.virtual_memory()[2])}".encode()
+    cpu = f"#01:02,{int(psutil.cpu_percent(1))}".encode()
     client_socket.send(cpu)
+    time.sleep(0.5)
     client_socket.send(ram)
 
     print("Message sent \nCPU:"+str(psutil.cpu_percent(4))+"%\nRAM:"+str(psutil.virtual_memory()[2])+"%")
