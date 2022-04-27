@@ -56,11 +56,8 @@ class ClientThread(threading.Thread):
                         # We will send an embed message to the discord Webhook. Create an embed object with an orange
                         # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
                         # exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="RAM usage warning", color=0xFFA500, description="RAM usage is "
-                                                                                                    "over 70%, "
-                                                                                                    "exactly at " +
-                                                                                                    data[1].decode()
-                                                                                                    + "%")
+                        embed = DiscordEmbed(title="RAM usage warning", color=0xFFA500,
+                                             description="RAM usage is over 70%, exactly at "+data[1].decode()+"%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -82,11 +79,8 @@ class ClientThread(threading.Thread):
                         # We will send an embed message to the discord Webhook. Create an embed object with an orange
                         # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
                         # exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500, description="CPU usage is "
-                                                                                                    "over 85%, "
-                                                                                                    "exactly at " +
-                                                                                                    data[1].decode()
-                                                                                                    + "%")
+                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500,
+                                             description="CPU usage is over 85%, exactly at "+data[1].decode()+"%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -98,11 +92,8 @@ class ClientThread(threading.Thread):
                         # We will send an embed message to the discord Webhook. Create an embed object with an orange
                         # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
                         # exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500, description="CPU usage is "
-                                                                                                    "over 70%, "
-                                                                                                    "exactly at " +
-                                                                                                    data[1].decode()
-                                                                                                    + "%")
+                        embed = DiscordEmbed(title="CPU usage warning", color=0xFFA500,
+                                             description="CPU usage is over 70%, exactly at "+data[1].decode()+"%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -140,13 +131,8 @@ class ClientThread(threading.Thread):
                         # We will send an embed message to the discord Webhook. Create an embed object with an orange
                         # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
                         # exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq RAM usage warning", color=0xFFA500, description="RAM "
-                                                                                                            "usage is"
-                                                                                                            " over "
-                                                                                                            "70%, "
-                                                                                                            "exactly "
-                                                                                                            "at " +
-                                                                                                            data[1].decode() + "%")
+                        embed = DiscordEmbed(title="Paaliaq RAM usage warning", color=0xFFA500,
+                                             description="RAM usage is over 70%, exactly at "+data[1].decode()+"%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -168,15 +154,8 @@ class ClientThread(threading.Thread):
                         # We will send an embed message to the discord Webhook. Create an embed object with an orange
                         # color and the title is "CPU usage warning". The description was "CPU usage is over 70%,
                         # exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500, description="CPU "
-                                                                                                            "usage is"
-                                                                                                            " over "
-                                                                                                            "85%, "
-                                                                                                            "exactly "
-                                                                                                            "at " +
-                                                                                                            data[
-
-                                                                                                                1].decode() + "%")
+                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500,
+                                             description="CPU usage is over 85%, exactly at "+data[1].decode() + "%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
@@ -186,8 +165,10 @@ class ClientThread(threading.Thread):
                 elif int(data[1].decode()) >= 70:
                     if not ram_over_use:
                         # We will send an embed message to the discord Webhook.
-                        # Create an embed object with an orange color and the title is "CPU usage warning". The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
-                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500, description="CPU usage is over 70%, exactly at " + data[1].decode() + "%")
+                        # Create an embed object with an orange color and the title is "CPU usage warning".
+                        # The description was "CPU usage is over 70%, exactly at " + data[1] + "%".
+                        embed = DiscordEmbed(title="Paaliaq CPU usage warning", color=0xFFA500,
+                                             description="CPU usage is over 70%, exactly at "+data[1].decode()+"%")
                         # Send the embed message to the discord Webhook.
                         webhook = DiscordWebhook(url=webhook_url, content="", embeds=[embed])
                         webhook.execute()
