@@ -8,8 +8,7 @@ import socket
 import threading
 import pymysql
 
-webhook_url = "https://discord.com/api/webhooks/962749706243547136/lzWeN79baiNo6lMkiUMHjLwWuWyxfQT" \
-              "-leg9Y90W_7QEdw8XPmscCpUCsGUh-cO-w1TO "
+webhook_url = ""
 
 
 # Make a threading class for the client.
